@@ -1,0 +1,23 @@
+<h1>Posts</h1>
+
+
+<% @posts.each do |a| %>
+
+
+<%= image_tag a.image.url(:thumb) %><br>
+<%= a.title %><br>
+<%= a.post %><br>
+
+<%= link_to 'Show Post', post_path(a) %><br>
+
+
+<%= link_to "X", post_path(a), method: :delete, data: {confirm: "Are You Sure?"} %><br><br>
+
+
+
+
+<% end %>
+
+<hr>
+
+<div class = "btn btn-success"><%= link_to 'New', new_post_path() %></div>
